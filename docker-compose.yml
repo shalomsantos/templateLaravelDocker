@@ -1,0 +1,41 @@
+version: '3.1'
+services:
+    app:
+        build: .
+        working_dir: /var/www
+        volumes:
+            - '.:/var/www'
+            # php-ini-overrides.ini
+        networks:
+            - laravel
+
+    mysql:
+        image: 'mysql:5.7'
+        working_dir: /var/www
+        volumes:
+            - '.:/var/www'
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=basicus
+        ports:
+            - '3306:3306'
+        networks:
+            - laravel
+
+    nginx:
+        image: 'nginx:alpine'
+        working_dir: /var/www
+        volumes:
+            - '.:/var/www'
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        ports:
+            - '8989:80'
+        networks:
+            - laravel
+
+networks:
+    laravel:
+        driver: bridge
+
+    
