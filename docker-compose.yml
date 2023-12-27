@@ -16,8 +16,12 @@ services:
             - .:/var/www
             - ./.docker/mysql/dbdata:/var/lib/mysql
         environment:
-            - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_DATABASE=basicus
+            - DB_CONNECTION=${DB_CONNECTION}
+            - DB_HOST=${DB_HOST}
+            - DB_PORT=${DB_PORT}
+            - DB_DATABASE=${DB_DATABASE}
+            - DB_USERNAME=${DB_USERNAME}
+            - DB_PASSWORD=${DB_PASSWORD}
         ports:
             - '3306:3306'
         networks:
