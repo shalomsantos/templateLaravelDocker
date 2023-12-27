@@ -4,7 +4,7 @@ services:
         build: .
         working_dir: /var/www
         volumes:
-            - '.:/var/www'
+            - .:/var/www
             # php-ini-overrides.ini
         networks:
             - laravel
@@ -13,7 +13,7 @@ services:
         image: 'mysql:5.7'
         working_dir: /var/www
         volumes:
-            - '.:/var/www'
+            - .:/var/www
             - ./.docker/mysql/dbdata:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=root
@@ -27,7 +27,7 @@ services:
         image: 'nginx:alpine'
         working_dir: /var/www
         volumes:
-            - '.:/var/www'
+            - .:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         ports:
             - '8989:80'
