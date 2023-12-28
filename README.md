@@ -11,9 +11,9 @@ cd templateLaravelDocker/
 ```
 
 
-Crie o Arquivo .env
+Crie o Arquivo .env *ubuntu
 ```sh
-cp .env
+touch .env
 ```
 
 
