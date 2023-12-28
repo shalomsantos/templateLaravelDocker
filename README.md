@@ -7,7 +7,7 @@ Clone o projeto
 git clone https://github.com/shalomsantos/templateLaravelDocker.git
 ```
 ```sh
-cd dockerLaravel/
+cd templateLaravelDocker/
 ```
 
 
@@ -28,15 +28,6 @@ DB_PORT=***
 DB_DATABASE=***
 DB_USERNAME=***
 DB_PASSWORD=***
-
-CACHE_DRIVER=***
-QUEUE_CONNECTION=***
-SESSION_DRIVER=***
-
-REDIS_HOST=***
-REDIS_PASSWORD=***
-REDIS_PORT=***
-```
 
 
 Suba os containers do projeto
